@@ -1,0 +1,29 @@
+{
+  description = "Trying Dendritic-Pattern config";
+
+  inputs = {
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    flake-parts.url = "github:hercules-ci/flake-parts";
+    import-tree.url = "github:denful/import-tree";
+
+    niri-flake = {
+      url = "github:sodiboo/niri-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+  };
+
+  outputs = inputs:
+    inputs.flake-parts.lib.mkFlake {inherit inputs;} {
+      imports = [
+        (inputs.import-tree ./modules)
+      ];
+
+      systems = ["x86_64-linux"];
+    };
+}
