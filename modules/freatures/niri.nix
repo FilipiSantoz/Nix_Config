@@ -138,6 +138,10 @@
             default-column-width = {
               proportion = 0.5;
             };
+
+            focus-ring = {
+              enable = false;
+            };
           };
           window-rules = [
             {

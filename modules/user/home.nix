@@ -16,7 +16,6 @@
         playerctl
         ripdrag
         fd
-        awww
         lazygit
         wl-clipboard
         lm_sensors
