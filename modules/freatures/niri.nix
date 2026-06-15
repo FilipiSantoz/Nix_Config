@@ -61,11 +61,11 @@
             "Mod+left".action.focus-column-left = {};
             "Mod+Right".action.focus-column-right = {};
             "Mod+Up".action.focus-window-up = {};
-            "Mod+Down".action.focus-column-down = {};
+            "Mod+Down".action.focus-window-down = {};
             "Mod+H".action.focus-column-left = {};
             "Mod+L".action.focus-column-right = {};
             "Mod+K".action.focus-window-up = {};
-            "Mod+J".action.focus-column-down = {};
+            "Mod+J".action.focus-window-down = {};
             "Mod+Shift+WheelScrollDown".action.focus-column-right = {};
             "Mod+Shift+WheelScrollUp".action.focus-column-left = {};
 
