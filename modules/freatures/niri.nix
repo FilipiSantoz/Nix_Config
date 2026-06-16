@@ -3,12 +3,10 @@
     ({pkgs, ...}: {
       home.packages = with pkgs; [
         xwayland-satellite
-        brightnessctl
       ];
 
       programs.niri = {
-        # Se quiser usar a versão unstable (mais recente):
-        # package = pkgs.niri-unstable;
+        package = pkgs.niri-unstable;
 
         settings = {
           input = {
@@ -45,8 +43,9 @@
             "Mod+T".action.switch-preset-window-height = {};
             "Mod+Shift+T".action.switch-preset-window-height-back = {};
             "Mod+F".action.maximize-column = {};
+            "Mod+O".action.toggle-overview = {};
 
-            # === WORKSPACES ===
+            # === Change Workspaces ===
             "Mod+1".action.focus-workspace = 1;
             "Mod+2".action.focus-workspace = 2;
             "Mod+3".action.focus-workspace = 3;
@@ -57,7 +56,7 @@
             "Mod+8".action.focus-workspace = 8;
             "Mod+9".action.focus-workspace = 9;
 
-            # === Window MOVE ===
+            # === Window Move ===
             "Mod+left".action.focus-column-left = {};
             "Mod+Right".action.focus-column-right = {};
             "Mod+Up".action.focus-window-up = {};
@@ -79,7 +78,7 @@
             "Mod+Ctrl+K".action.move-window-up = {};
             "Mod+Ctrl+J".action.move-window-down = {};
 
-            # === MOVE TO WORKSPACES ===
+            # === Move To Workspaces ===
             "Mod+Ctrl+1".action.move-column-to-workspace = 1;
             "Mod+Ctrl+2".action.move-column-to-workspace = 2;
             "Mod+Ctrl+3".action.move-column-to-workspace = 3;
@@ -90,31 +89,27 @@
             "Mod+Ctrl+8".action.move-column-to-workspace = 8;
             "Mod+Ctrl+9".action.move-column-to-workspace = 9;
 
-            # === SCROLL VERTICAL ===
+            # === Scroll Vertical ===
             "Mod+WheelScrollDown".action.focus-workspace-down = {};
             "Mod+WheelScrollUp".action.focus-workspace-up = {};
             "Mod+Ctrl+WheelScrollDown".action.move-column-to-workspace-down = {};
             "Mod+Ctrl+WheelScrollUp".action.move-column-to-workspace-up = {};
 
-            # Noctalia Integration
-            "Mod+Space".action.spawn = ["qs" "-c" "noctalia-shell" "ipc" "call" "launcher" "toggle"];
-            "Mod+S".action.spawn = ["qs" "-c" "noctalia-shell" "ipc" "call" "controlCenter" "toggle"];
-            "Mod+O".action.spawn = ["qs" "-c" "noctalia-shell" "ipc" "call" "settings" "toggle"];
-            "Mod+Escape".action.spawn = ["qs" "-c" "noctalia-shell" "ipc" "call" "sessionMenu" "toggle"];
+            # === Noctalia Integration ===
+            "Mod+Space".action.spawn = ["noctalia" "msg" "panel-toggle" "launcher"];
+            "Mod+S".action.spawn = ["noctalia" "msg" "panel-toggle" "control-center"];
+            "Mod+C".action.spawn = ["noctalia" "msg" "settings-toggle"];
+            "Mod+Escape".action.spawn = ["noctalia" "msg" "panel-toggle" "session"];
+            "XF86AudioRaiseVolume".action.spawn = ["noctalia" "msg" "volume-up"];
+            "XF86AudioLowerVolume".action.spawn = ["noctalia" "msg" "volume-down"];
+            "XF86AudioMute".action.spawn = ["noctalia" "msg" "volume-mute"];
+            "XF86AudioMicMute".action.spawn = ["noctalia" "msg" "mic-mute"];
 
-            # === MEDIA KEYS ===
-            "XF86AudioRaiseVolume".action.spawn = ["wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+"];
-            "XF86AudioLowerVolume".action.spawn = ["wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-"];
-            "XF86AudioMute".action.spawn = ["wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"];
-            "XF86AudioMicMute".action.spawn = ["wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"];
-
+            # === Media Controls ===
             "XF86AudioPlay".action.spawn = ["playerctl" "play-pause"];
             "XF86AudioStop".action.spawn = ["playerctl" "stop"];
             "XF86AudioPrev".action.spawn = ["playerctl" "previous"];
             "XF86AudioNext".action.spawn = ["playerctl" "next"];
-
-            "XF86MonBrightnessUp".action.spawn = ["brightnessctl" "--class=backlight" "set" "+10%"];
-            "XF86MonBrightnessDown".action.spawn = ["brightnessctl" "--class=backlight" "set" "-10%"];
           };
 
           layout = {
@@ -159,15 +154,25 @@
                 bottom-right = 12.0;
               };
             }
-          ];
-          cursor = {
-            size = 22;
-          };
-          layer-rules = [
+
+            # {
+            #   matches = [{app-id = "^kitty";}];
+            #   background-effect = {
+            #     blur = true;
+            #     xray = false;
+            #   };
+            # }
+
             {
               matches = [
-                {namespace = "^noctalia-backdrop";}
+                {app-id = "^firefox";}
               ];
+              open-maximized = true;
+            }
+          ];
+          layer-rules = [
+            {
+              matches = [{namespace = "^noctalia-backdrop";}];
               place-within-backdrop = true;
             }
           ];

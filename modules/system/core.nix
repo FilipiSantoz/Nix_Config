@@ -16,6 +16,7 @@
 
       networking.hostName = "lua";
       networking.networkmanager.enable = true;
+      services.power-profiles-daemon.enable = true;
 
       time.timeZone = "America/Sao_Paulo";
       i18n.defaultLocale = "pt_BR.UTF-8";
