@@ -9,7 +9,7 @@
           size = 11;
         };
         settings = {
-          background_opacity = "0.79";
+          # background_opacity = "0.79";
           background_blur = "1";
           window_padding_width = 4;
           hide_window_decorations = true;

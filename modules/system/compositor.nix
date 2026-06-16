@@ -10,6 +10,7 @@
       nixpkgs.overlays = [inputs.niri-flake.overlays.niri];
 
       programs.niri.enable = true;
+      programs.niri.package = pkgs.niri-unstable;
       niri-flake.cache.enable = true;
       security.polkit.enable = true;
 

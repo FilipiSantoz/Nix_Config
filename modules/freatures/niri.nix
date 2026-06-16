@@ -3,6 +3,7 @@
     ({pkgs, ...}: {
       home.packages = with pkgs; [
         xwayland-satellite
+        bibata-cursors
       ];
 
       programs.niri = {
@@ -19,6 +20,9 @@
             touchpad = {
               tap = true;
               natural-scroll = true;
+            };
+            focus-follows-mouse = {
+              enable = true;
             };
           };
 
@@ -153,16 +157,8 @@
                 bottom-left = 12.0;
                 bottom-right = 12.0;
               };
+              opacity = 0.84;
             }
-
-            # {
-            #   matches = [{app-id = "^kitty";}];
-            #   background-effect = {
-            #     blur = true;
-            #     xray = false;
-            #   };
-            # }
-
             {
               matches = [
                 {app-id = "^firefox";}
@@ -176,6 +172,10 @@
               place-within-backdrop = true;
             }
           ];
+          cursor = {
+            size = 22;
+            theme = "Bibata-Modern-Ice";
+          };
         };
       };
     })
