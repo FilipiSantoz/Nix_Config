@@ -2,10 +2,13 @@
   nixosModules = [
     ({
       inputs,
+      config,
       pkgs,
       ...
     }: {
       imports = [inputs.niri-flake.nixosModules.niri];
+
+      programs.niri.enable = true;
 
       niri-flake.cache.enable = true;
       security.polkit.enable = true;
@@ -13,7 +16,7 @@
       services.greetd = {
         enable = true;
         settings.default_session = {
-          command = "${pkgs.tuigreet}/bin/tuigreet --time --cmd ${pkgs.niri}/bin/niri-session";
+          command = "${pkgs.tuigreet}/bin/tuigreet --time --cmd ${config.programs.niri.package}/bin/niri-session";
           user = "greeter";
         };
       };
