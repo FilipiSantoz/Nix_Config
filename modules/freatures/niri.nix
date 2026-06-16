@@ -96,6 +96,12 @@
             "Mod+Ctrl+WheelScrollDown".action.move-column-to-workspace-down = {};
             "Mod+Ctrl+WheelScrollUp".action.move-column-to-workspace-up = {};
 
+            # Noctalia Integration
+            "Mod+Space".action.spawn = ["qs" "-c" "noctalia-shell" "ipc" "call" "launcher" "toggle"];
+            "Mod+S".action.spawn = ["qs" "-c" "noctalia-shell" "ipc" "call" "controlCenter" "toggle"];
+            "Mod+O".action.spawn = ["qs" "-c" "noctalia-shell" "ipc" "call" "settings" "toggle"];
+            "Mod+Escape".action.spawn = ["qs" "-c" "noctalia-shell" "ipc" "call" "sessionMenu" "toggle"];
+
             # === MEDIA KEYS ===
             "XF86AudioRaiseVolume".action.spawn = ["wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+"];
             "XF86AudioLowerVolume".action.spawn = ["wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-"];
@@ -157,6 +163,14 @@
           cursor = {
             size = 22;
           };
+          layer-rules = [
+            {
+              matches = [
+                {namespace = "^noctalia-backdrop";}
+              ];
+              place-within-backdrop = true;
+            }
+          ];
         };
       };
     })
