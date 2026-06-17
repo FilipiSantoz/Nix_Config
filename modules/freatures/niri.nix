@@ -16,6 +16,7 @@
                 layout = "br";
                 variant = "abnt2";
               };
+              numlock = true;
             };
             touchpad = {
               tap = true;
@@ -38,8 +39,8 @@
             "Mod+B".action.spawn = "firefox";
             "Mod+W".action.close-window = {};
             "Mod+Shift+E".action.quit = {};
-            "Mod+Shift+S".action.screenshot-screen = {show-pointer = true;};
             "Mod+N".action.spawn = ["kitty" "nvim"];
+            "Mod+Y".action.spawn = ["kitty" "y"];
 
             # === LAYOUT CONTROLS ===
             "Mod+R".action.switch-preset-column-width = {};
@@ -100,6 +101,7 @@
             "Mod+Ctrl+WheelScrollUp".action.move-column-to-workspace-up = {};
 
             # === Noctalia Integration ===
+            "Mod+Shift+S".action.spawn = ["noctalia" "msg" "screenshot-region" "wlr-screencopy"];
             "Mod+Space".action.spawn = ["noctalia" "msg" "panel-toggle" "launcher"];
             "Mod+S".action.spawn = ["noctalia" "msg" "panel-toggle" "control-center"];
             "Mod+C".action.spawn = ["noctalia" "msg" "settings-toggle"];
@@ -181,6 +183,7 @@
             size = 24;
             theme = "Bibata-Modern-Ice";
           };
+          hotkey-overlay.skip-at-startup = true;
         };
       };
     })

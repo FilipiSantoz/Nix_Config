@@ -19,6 +19,7 @@
         lazygit
         wl-clipboard
         lm_sensors
+        fastfetch
 
         # Dap
         vscode-extensions.vadimcn.vscode-lldb
