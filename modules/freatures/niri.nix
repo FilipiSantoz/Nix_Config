@@ -120,6 +120,12 @@
             gaps = 10;
             background-color = "transparent";
 
+            focus-ring = {
+              enable = true;
+              width = 2;
+              active.color = "#BB99E8";
+            };
+
             shadow = {
               enable = true;
               color = "#00000070";
@@ -143,10 +149,6 @@
             default-column-width = {
               proportion = 0.5;
             };
-
-            focus-ring = {
-              enable = false;
-            };
           };
           window-rules = [
             {
@@ -157,7 +159,10 @@
                 bottom-left = 12.0;
                 bottom-right = 12.0;
               };
-              opacity = 0.84;
+            }
+            {
+              matches = [{app-id = "^kitty";}];
+              draw-border-with-background = false;
             }
             {
               matches = [
@@ -173,7 +178,7 @@
             }
           ];
           cursor = {
-            size = 22;
+            size = 24;
             theme = "Bibata-Modern-Ice";
           };
         };
