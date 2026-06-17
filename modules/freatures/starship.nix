@@ -13,13 +13,13 @@
           hostname = {
             ssh_only = false;
             format = "[$hostname]($style)";
-            style = "italic #FFFFFF";
+            style = "bold #FFFFFF";
             disabled = false;
           };
 
           os = {
             disabled = false;
-            style = "italic #FFFFFF";
+            style = "#FFFFFF";
           };
 
           character = {
@@ -30,8 +30,8 @@
           directory = {
             truncation_length = 2;
             truncation_symbol = "…/";
-            repo_root_style = "italic #9D71C9";
-            style = "italic #FFFFFF";
+            repo_root_style = "bold #9D71C9";
+            style = "bold #FFFFFF";
             repo_root_format = "[$repo_root]($repo_root_style)[$path]($style)[$read_only]($read_only_style) ";
             read_only = " 󰌾";
           };
