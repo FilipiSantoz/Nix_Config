@@ -22,9 +22,6 @@
               tap = true;
               natural-scroll = true;
             };
-            focus-follows-mouse = {
-              enable = true;
-            };
           };
 
           environment = {
@@ -40,7 +37,7 @@
             "Mod+W".action.close-window = {};
             "Mod+Shift+E".action.quit = {};
             "Mod+N".action.spawn = ["kitty" "nvim"];
-            "Mod+Y".action.spawn = ["kitty" "y"];
+            "Mod+Y".action.spawn = ["kitty" "yazi"];
 
             # === LAYOUT CONTROLS ===
             "Mod+R".action.switch-preset-column-width = {};
