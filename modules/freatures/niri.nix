@@ -45,6 +45,8 @@
             "Mod+T".action.switch-preset-window-height = {};
             "Mod+Shift+T".action.switch-preset-window-height-back = {};
             "Mod+F".action.maximize-column = {};
+            "Mod+Shift+F".action.fullscreen-window = {};
+            "Mod+M".action.maximize-window-to-edge = {};
             "Mod+O".action.toggle-overview = {};
 
             # === Change Workspaces ===

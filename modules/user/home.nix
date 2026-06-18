@@ -11,10 +11,8 @@
         wget
         ripgrep
         eza
-        yazi
         btop
         playerctl
-        ripdrag
         fd
         lazygit
         wl-clipboard

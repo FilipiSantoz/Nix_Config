@@ -2,6 +2,8 @@
   nixosModules = [
     ({pkgs, ...}: {
       boot.loader = {
+        timeout = 15;
+
         efi.canTouchEfiVariables = true;
         efi.efiSysMountPoint = "/boot";
         grub = {
