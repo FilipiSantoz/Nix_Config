@@ -25,20 +25,20 @@
               run = "mediainfo";
             }
           ];
-          keymap = {
-            mgr.prepend_keymap = [
-              {
-                on = ["<A-d>"];
-                run = "shell -- ripdrag --no-click --and-exit --icon-size 64 --target --all \"$@\" | while read filepath; do cp -nR \"\$filepath\" .; done";
-                desc = "Arrastar arquivos para fora e copiar para dentro";
-              }
-              {
-                on = ["<A-D>"];
-                run = "shell -- ripdrag --no-click --and-exit --icon-size 64 --target --all \"$@\" | while read filepath; do cp -fR \"\$filepath\" .; done";
-                desc = "Arrastar arquivos (sobrescrevendo existentes)";
-              }
-            ];
-          };
+        };
+        keymap = {
+          mgr.prepend_keymap = [
+            {
+              on = ["<A-d>"];
+              run = "shell -- ripdrag --target --keep --no-click --and-exit --icon-size 64 %s | while read filepath; do cp -nR \"$filepath\" .; done";
+              desc = "Arrastar arquivos para fora e copiar para dentro";
+            }
+            {
+              on = ["<A-D>"];
+              run = "shell -- ripdrag --target --keep --no-click --and-exit --icon-size 64 %s | while read filepath; do cp -fR \"$filepath\" .; done";
+              desc = "Arrastar arquivos (sobrescrevendo existentes)";
+            }
+          ];
         };
       };
       home.packages = with pkgs; [
