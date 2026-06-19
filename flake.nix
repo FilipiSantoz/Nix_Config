@@ -18,6 +18,11 @@
     };
 
     noctalia.url = "github:noctalia-dev/noctalia";
+
+    areofyl-fetch = {
+      url = "github:areofyl/fetch";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs:
