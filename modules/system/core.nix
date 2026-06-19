@@ -11,6 +11,7 @@
           device = "nodev";
           efiSupport = true;
           useOSProber = true;
+          splashImage = ./images/x.png;
         };
       };
       boot.initrd.luks.devices."main".device = "/dev/disk/by-uuid/cc635417-f518-4862-b3bd-fccad35e308d";
