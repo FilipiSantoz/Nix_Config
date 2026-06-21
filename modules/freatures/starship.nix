@@ -23,8 +23,9 @@
           };
 
           character = {
-            error_symbol = "[✘](bold #FFFFFF)";
-            success_symbol = "[➤](bold #FFFFFF)";
+            error_symbol = "[🗶](bold #FFFFFF)";
+            success_symbol = "[🢖](bold #FFFFFF)";
+            vimcmd_symbol = "[🢔](bold #FFFFFF)";
           };
 
           directory = {

@@ -24,6 +24,7 @@
           la = "eza -a --icons --group-directories-first";
           lt = "eza --tree --icons";
           lla = "eza -lah --icons --group-directories-first";
+          nixrebuild = "sudo nixos-rebuild switch --flake ~/luaNix/nix#lua";
         };
 
         initContent = ''
