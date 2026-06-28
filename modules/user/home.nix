@@ -18,6 +18,7 @@
         wl-clipboard
         lm_sensors
         fastfetch
+        opencode
 
         # Dap
         vscode-extensions.vadimcn.vscode-lldb

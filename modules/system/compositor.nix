@@ -30,7 +30,7 @@
           common.default = ["gtk"];
         };
       };
-      environment.systemPackages = with pkgs; [vulkan-tools];
+      environment.systemPackages = with pkgs; [vulkan-tools radeontop];
     })
   ];
 }
