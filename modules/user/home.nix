@@ -19,6 +19,9 @@
         lm_sensors
         fastfetch
         opencode
+        yt-dlp
+        ffmpeg
+        strawberry
 
         # Dap
         vscode-extensions.vadimcn.vscode-lldb
