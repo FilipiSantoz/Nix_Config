@@ -33,7 +33,8 @@
 
           binds = {
             "Mod+Return".action.spawn = "kitty";
-            "Mod+B".action.spawn = "firefox";
+            "Mod+B".action.spawn = "zen-beta";
+            "Mod+X".action.spawn = "audacious";
             "Mod+W".action.close-window = {};
             "Mod+Shift+E".action.quit = {};
             "Mod+N".action.spawn = ["kitty" "nvim"];

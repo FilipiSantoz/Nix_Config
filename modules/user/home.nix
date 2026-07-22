@@ -21,7 +21,9 @@
         opencode
         yt-dlp
         ffmpeg
-        strawberry
+        audacious
+        chromium
+        obs-studio
 
         # Dap
         vscode-extensions.vadimcn.vscode-lldb
