@@ -23,7 +23,7 @@
         ffmpeg
         audacious
         chromium
-        obs-studio
+        vlc
 
         # Dap
         vscode-extensions.vadimcn.vscode-lldb
@@ -43,6 +43,7 @@
         prettier
         stylua
         cargo
+        marksman
         # Wrapper que expõe o codelldb no PATH
         (pkgs.writeShellScriptBin "codelldb" ''
           exec ${pkgs.vscode-extensions.vadimcn.vscode-lldb}/share/vscode/extensions/vadimcn.vscode-lldb/adapter/codelldb "$@"
