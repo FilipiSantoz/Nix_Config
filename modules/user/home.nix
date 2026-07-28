@@ -3,12 +3,6 @@
     ({pkgs, ...}: {
       home.packages = with pkgs; [
         # Normal Stack
-        neovim
-        git
-        curl
-        jq
-        bat
-        wget
         ripgrep
         eza
         btop

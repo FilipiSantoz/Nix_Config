@@ -58,6 +58,8 @@
         fileSystems = ["/"];
       };
 
+      environment.systemPackages = with pkgs; [neovim git curl bat jq wget unzip];
+
       system.stateVersion = "26.05";
     })
   ];
