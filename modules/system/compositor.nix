@@ -7,10 +7,11 @@
       ...
     }: {
       imports = [inputs.niri-flake.nixosModules.niri];
-      nixpkgs.overlays = [inputs.niri-flake.overlays.niri];
 
-      programs.niri.enable = true;
-      programs.niri.package = pkgs.niri-unstable;
+      programs.niri = {
+        enable = true;
+        package = pkgs.niri;
+      };
       niri-flake.cache.enable = true;
       security.polkit.enable = true;
 

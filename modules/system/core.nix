@@ -19,6 +19,11 @@
 
       networking.hostName = "lua";
       networking.networkmanager.enable = true;
+      networking.firewall = {
+        enable = true;
+        allowedTCPPorts = [22];
+        trustedInterfaces = ["dcoker0"];
+      };
       services.power-profiles-daemon.enable = true;
 
       time.timeZone = "America/Sao_Paulo";

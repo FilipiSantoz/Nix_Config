@@ -13,11 +13,11 @@
         lm_sensors
         fastfetch
         opencode
-        yt-dlp
-        ffmpeg
         audacious
         chromium
         vlc
+        pi-coding-agent
+        shotcut
 
         # Dap
         vscode-extensions.vadimcn.vscode-lldb
@@ -26,6 +26,7 @@
 
         # Code formater and lsp
         go
+        djlint
         alejandra
         rustfmt
         shfmt

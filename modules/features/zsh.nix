@@ -19,6 +19,7 @@
         };
         # EZA Aliases
         shellAliases = {
+          vim = "nvim";
           ls = "eza --icons --group-directories-first";
           ll = "eza -lh --icons --group-directories-first";
           la = "eza -a --icons --group-directories-first";

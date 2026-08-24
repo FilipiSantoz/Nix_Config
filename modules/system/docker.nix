@@ -1,0 +1,13 @@
+{...}: {
+  nixosModules = [
+    ({...}: {
+      virtualisation.docker = {
+        enable = true;
+        autoPrune = {
+          enable = true;
+          flags = ["--all"];
+        };
+      };
+    })
+  ];
+}
