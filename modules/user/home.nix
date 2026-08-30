@@ -18,6 +18,10 @@
         vlc
         pi-coding-agent
         shotcut
+        nasm
+        gcc
+        hextazy
+        rocmPackages.rocm-smi
 
         # Dap
         vscode-extensions.vadimcn.vscode-lldb
@@ -38,6 +42,7 @@
         prettier
         stylua
         cargo
+        asm-lsp
         marksman
         # Wrapper que expõe o codelldb no PATH
         (pkgs.writeShellScriptBin "codelldb" ''
