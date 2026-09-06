@@ -11,7 +11,7 @@
           device = "nodev";
           efiSupport = true;
           useOSProber = true;
-          splashImage = ./images/x.png;
+          splashImage = ./images/j.png;
         };
       };
       boot.initrd.luks.devices."main".device = "/dev/disk/by-uuid/cc635417-f518-4862-b3bd-fccad35e308d";
@@ -54,6 +54,8 @@
         dates = "weekly";
         options = "--delete-older-than 7d";
       };
+
+      nixpkgs.config.allowUnfree = true;
 
       zramSwap.enable = true;
       services.fstrim.enable = true;

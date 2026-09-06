@@ -8,11 +8,17 @@
           name = "DepartureMono Nerd Font";
           size = 11;
         };
+        keybindings = {
+          "ctrl+shift+enter" = "new_tab";
+          "ctrl+shift+w" = "close_tab";
+          "ctrl+shift+right" = "next_tab";
+          "ctrl+shift+left" = "previous_tab";
+        };
         settings = {
-          background_opacity = "0.84";
+          background_opacity = "0.88";
           background_blur = "1";
           window_padding_width = 4;
-          hide_window_decorations = true;
+          hide_window_decorations = "titlebar-only";
           confirm_os_window_close = 0;
           scrollback_lines = 10000;
           enable_audio_bell = false;

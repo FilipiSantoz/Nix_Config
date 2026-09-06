@@ -125,7 +125,7 @@
             focus-ring = {
               enable = true;
               width = 2;
-              active.color = "#BB99E8";
+              active.color = "#F4F2F7";
             };
 
             shadow = {
@@ -169,6 +169,12 @@
             {
               matches = [
                 {app-id = "^firefox";}
+              ];
+              open-maximized = true;
+            }
+            {
+              matches = [
+                {app-id = "^zen-beta";}
               ];
               open-maximized = true;
             }

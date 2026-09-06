@@ -5,7 +5,6 @@
         # Normal Stack
         ripgrep
         eza
-        btop
         playerctl
         fd
         lazygit
@@ -18,36 +17,20 @@
         vlc
         pi-coding-agent
         shotcut
-        nasm
         gcc
         hextazy
         rocmPackages.rocm-smi
+        btop-rocm
+        tree-sitter
+        glib
 
-        # Dap
-        vscode-extensions.vadimcn.vscode-lldb
-        lldb
-        delve
-
-        # Code formater and lsp
-        go
-        djlint
         alejandra
-        rustfmt
         shfmt
         lua-language-server
-        gopls
         nixd
-        rust-analyzer
-        clang-tools
-        prettier
         stylua
-        cargo
-        asm-lsp
         marksman
-        # Wrapper que expõe o codelldb no PATH
-        (pkgs.writeShellScriptBin "codelldb" ''
-          exec ${pkgs.vscode-extensions.vadimcn.vscode-lldb}/share/vscode/extensions/vadimcn.vscode-lldb/adapter/codelldb "$@"
-        '')
+        prettier
       ];
 
       xdg.userDirs = {
@@ -75,6 +58,7 @@
       programs.direnv = {
         enable = true;
         nix-direnv.enable = true;
+        enableZshIntegration = true;
       };
 
       # === GIT ===
