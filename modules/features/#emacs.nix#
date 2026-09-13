@@ -1,0 +1,29 @@
+{...}: {
+  homeModules = [
+    ({pkgs, ...}: {
+      programs.emacs = {
+        enable = true;
+
+        package = pkgs.emacs-pgtk.override {
+          withNativeCompilation = true;
+          withSQLite3 = true;
+          withTreeSitter = true;
+        };
+
+        extraPackages = epkgs:
+          with epkgs; [
+            evil
+            general
+            magit
+            avy
+            use-package
+            catppuccin-theme
+            vterm
+            org
+            projectile
+            multiple-cursors
+          ];
+      };
+    })
+  ];
+}

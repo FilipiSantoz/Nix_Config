@@ -3,10 +3,8 @@
     ({pkgs, ...}: {
       home.packages = with pkgs; [
         # Normal Stack
-        ripgrep
         eza
         playerctl
-        fd
         lazygit
         wl-clipboard
         lm_sensors
@@ -18,12 +16,17 @@
         pi-coding-agent
         shotcut
         gcc
+        gnumake
         hextazy
         rocmPackages.rocm-smi
         btop-rocm
         tree-sitter
         glib
+        foliate
+        miro
+        gnome-calculator
 
+        statix
         alejandra
         shfmt
         lua-language-server
@@ -31,6 +34,17 @@
         stylua
         marksman
         prettier
+        prettierd
+        eslint_d
+        rustc
+        rust-analyzer
+        rustfmt
+        cargo
+        go
+        gopls
+        gotools
+        golangci-lint
+        shellcheck
       ];
 
       xdg.userDirs = {
@@ -46,13 +60,16 @@
         publicShare = "$HOME/Public";
       };
 
-      home.sessionVariables = {
-        EDITOR = "nvim";
-        VISUAL = "nvim";
-        BROWSER = "firefox";
-        GDK_BACKEND = "wayland";
-        QT_QPA_PLATFORM = "wayland";
-        MOZ_ENABLE_WAYLAND = "1";
+      home = {
+        sessionVariables = {
+          BROWSER = "firefox";
+          GDK_BACKEND = "wayland";
+          QT_QPA_PLATFORM = "wayland";
+          MOZ_ENABLE_WAYLAND = "1";
+        };
+        sessionPath = [
+          "$HOME/.config/emacs/bin:$PATH"
+        ];
       };
 
       programs.direnv = {
@@ -68,7 +85,6 @@
           user.name = "FilipiSantoz";
           user.email = "239681201+FilipiSantoz@users.noreply.github.com";
           init.defaultBranch = "main";
-          core.editor = "nvim";
           pull.rebase = false;
         };
       };

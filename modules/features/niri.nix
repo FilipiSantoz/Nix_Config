@@ -37,6 +37,7 @@
             "Mod+X".action.spawn = "audacious";
             "Mod+W".action.close-window = {};
             "Mod+Shift+E".action.quit = {};
+            "Mod+E".action.spawn = ["emacs"];
             "Mod+N".action.spawn = ["kitty" "nvim"];
             "Mod+Y".action.spawn = ["kitty" "yazi"];
 
@@ -106,8 +107,8 @@
             "Mod+S".action.spawn = ["noctalia" "msg" "panel-toggle" "control-center"];
             "Mod+C".action.spawn = ["noctalia" "msg" "settings-toggle"];
             "Mod+Escape".action.spawn = ["noctalia" "msg" "panel-toggle" "session"];
-            "XF86AudioRaiseVolume".action.spawn = ["noctalia" "msg" "volume-up"];
-            "XF86AudioLowerVolume".action.spawn = ["noctalia" "msg" "volume-down"];
+            "XF86AudioRaiseVolume".action.spawn = ["noctalia" "msg" "volume-up 2"];
+            "XF86AudioLowerVolume".action.spawn = ["noctalia" "msg" "volume-down 2"];
             "XF86AudioMute".action.spawn = ["noctalia" "msg" "volume-mute"];
             "XF86AudioMicMute".action.spawn = ["noctalia" "msg" "mic-mute"];
 

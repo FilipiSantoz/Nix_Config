@@ -65,7 +65,7 @@
         fileSystems = ["/"];
       };
 
-      environment.systemPackages = with pkgs; [neovim git curl bat jq wget unzip];
+      environment.systemPackages = with pkgs; [neovim git curl bat jq wget unzip fd fzf ripgrep coreutils];
 
       system.stateVersion = "26.05";
     })
