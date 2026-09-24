@@ -1,6 +1,6 @@
-{...}: {
+{ ... }: {
   homeModules = [
-    ({pkgs, ...}: {
+    ({ pkgs, ... }: {
       home.packages = with pkgs; [
         xwayland-satellite
         bibata-cursors
@@ -35,21 +35,27 @@
             "Mod+Return".action.spawn = "kitty";
             "Mod+B".action.spawn = "zen-beta";
             "Mod+X".action.spawn = "audacious";
-            "Mod+W".action.close-window = {};
-            "Mod+Shift+E".action.quit = {};
-            "Mod+E".action.spawn = ["emacs"];
-            "Mod+N".action.spawn = ["kitty" "nvim"];
-            "Mod+Y".action.spawn = ["kitty" "yazi"];
+            "Mod+W".action.close-window = { };
+            "Mod+Shift+E".action.quit = { };
+            "Mod+E".action.spawn = [ "emacs" ];
+            "Mod+N".action.spawn = [
+              "kitty"
+              "nvim"
+            ];
+            "Mod+Y".action.spawn = [
+              "kitty"
+              "yazi"
+            ];
 
             # === LAYOUT CONTROLS ===
-            "Mod+R".action.switch-preset-column-width = {};
-            "Mod+Shift+R".action.switch-preset-column-width-back = {};
-            "Mod+T".action.switch-preset-window-height = {};
-            "Mod+Shift+T".action.switch-preset-window-height-back = {};
-            "Mod+F".action.maximize-column = {};
-            "Mod+Shift+F".action.fullscreen-window = {};
-            "Mod+M".action.maximize-window-to-edges = {};
-            "Mod+O".action.toggle-overview = {};
+            "Mod+R".action.switch-preset-column-width = { };
+            "Mod+Shift+R".action.switch-preset-column-width-back = { };
+            "Mod+T".action.switch-preset-window-height = { };
+            "Mod+Shift+T".action.switch-preset-window-height-back = { };
+            "Mod+F".action.maximize-column = { };
+            "Mod+Shift+F".action.fullscreen-window = { };
+            "Mod+M".action.maximize-window-to-edges = { };
+            "Mod+O".action.toggle-overview = { };
 
             # === Change Workspaces ===
             "Mod+1".action.focus-workspace = 1;
@@ -63,26 +69,26 @@
             "Mod+9".action.focus-workspace = 9;
 
             # === Window Move ===
-            "Mod+left".action.focus-column-left = {};
-            "Mod+Right".action.focus-column-right = {};
-            "Mod+Up".action.focus-window-up = {};
-            "Mod+Down".action.focus-window-down = {};
-            "Mod+H".action.focus-column-left = {};
-            "Mod+L".action.focus-column-right = {};
-            "Mod+K".action.focus-window-up = {};
-            "Mod+J".action.focus-window-down = {};
-            "Mod+Shift+WheelScrollDown".action.focus-column-right = {};
-            "Mod+Shift+WheelScrollUp".action.focus-column-left = {};
+            "Mod+left".action.focus-column-left = { };
+            "Mod+Right".action.focus-column-right = { };
+            "Mod+Up".action.focus-window-up = { };
+            "Mod+Down".action.focus-window-down = { };
+            "Mod+H".action.focus-column-left = { };
+            "Mod+L".action.focus-column-right = { };
+            "Mod+K".action.focus-window-up = { };
+            "Mod+J".action.focus-window-down = { };
+            "Mod+Shift+WheelScrollDown".action.focus-column-right = { };
+            "Mod+Shift+WheelScrollUp".action.focus-column-left = { };
 
             # === Change Window  ===
-            "Mod+Ctrl+left".action.move-column-left = {};
-            "Mod+Ctrl+Right".action.move-column-right = {};
-            "Mod+Ctrl+Up".action.move-window-up = {};
-            "Mod+Ctrl+Down".action.move-window-down = {};
-            "Mod+Ctrl+L".action.move-column-left = {};
-            "Mod+Ctrl+H".action.move-column-right = {};
-            "Mod+Ctrl+K".action.move-window-up = {};
-            "Mod+Ctrl+J".action.move-window-down = {};
+            "Mod+Ctrl+left".action.move-column-left = { };
+            "Mod+Ctrl+Right".action.move-column-right = { };
+            "Mod+Ctrl+Up".action.move-window-up = { };
+            "Mod+Ctrl+Down".action.move-window-down = { };
+            "Mod+Ctrl+L".action.move-column-left = { };
+            "Mod+Ctrl+H".action.move-column-right = { };
+            "Mod+Ctrl+K".action.move-window-up = { };
+            "Mod+Ctrl+J".action.move-window-down = { };
 
             # === Move To Workspaces ===
             "Mod+Ctrl+1".action.move-column-to-workspace = 1;
@@ -96,27 +102,79 @@
             "Mod+Ctrl+9".action.move-column-to-workspace = 9;
 
             # === Scroll Vertical ===
-            "Mod+WheelScrollDown".action.focus-workspace-down = {};
-            "Mod+WheelScrollUp".action.focus-workspace-up = {};
-            "Mod+Ctrl+WheelScrollDown".action.move-column-to-workspace-down = {};
-            "Mod+Ctrl+WheelScrollUp".action.move-column-to-workspace-up = {};
+            "Mod+WheelScrollDown".action.focus-workspace-down = { };
+            "Mod+WheelScrollUp".action.focus-workspace-up = { };
+            "Mod+Ctrl+WheelScrollDown".action.move-column-to-workspace-down = { };
+            "Mod+Ctrl+WheelScrollUp".action.move-column-to-workspace-up = { };
 
             # === Noctalia Integration ===
-            "Mod+Shift+S".action.spawn = ["noctalia" "msg" "screenshot-region" "wlr-screencopy"];
-            "Mod+Space".action.spawn = ["noctalia" "msg" "panel-toggle" "launcher"];
-            "Mod+S".action.spawn = ["noctalia" "msg" "panel-toggle" "control-center"];
-            "Mod+C".action.spawn = ["noctalia" "msg" "settings-toggle"];
-            "Mod+Escape".action.spawn = ["noctalia" "msg" "panel-toggle" "session"];
-            "XF86AudioRaiseVolume".action.spawn = ["noctalia" "msg" "volume-up 2"];
-            "XF86AudioLowerVolume".action.spawn = ["noctalia" "msg" "volume-down 2"];
-            "XF86AudioMute".action.spawn = ["noctalia" "msg" "volume-mute"];
-            "XF86AudioMicMute".action.spawn = ["noctalia" "msg" "mic-mute"];
+            "Mod+Shift+S".action.spawn = [
+              "noctalia"
+              "msg"
+              "screenshot-region"
+              "wlr-screencopy"
+            ];
+            "Mod+Space".action.spawn = [
+              "noctalia"
+              "msg"
+              "panel-toggle"
+              "launcher"
+            ];
+            "Mod+S".action.spawn = [
+              "noctalia"
+              "msg"
+              "panel-toggle"
+              "control-center"
+            ];
+            "Mod+C".action.spawn = [
+              "noctalia"
+              "msg"
+              "settings-toggle"
+            ];
+            "Mod+Escape".action.spawn = [
+              "noctalia"
+              "msg"
+              "panel-toggle"
+              "session"
+            ];
+            "XF86AudioRaiseVolume".action.spawn = [
+              "noctalia"
+              "msg"
+              "volume-up 2"
+            ];
+            "XF86AudioLowerVolume".action.spawn = [
+              "noctalia"
+              "msg"
+              "volume-down 2"
+            ];
+            "XF86AudioMute".action.spawn = [
+              "noctalia"
+              "msg"
+              "volume-mute"
+            ];
+            "XF86AudioMicMute".action.spawn = [
+              "noctalia"
+              "msg"
+              "mic-mute"
+            ];
 
             # === Media Controls ===
-            "XF86AudioPlay".action.spawn = ["playerctl" "play-pause"];
-            "XF86AudioStop".action.spawn = ["playerctl" "stop"];
-            "XF86AudioPrev".action.spawn = ["playerctl" "previous"];
-            "XF86AudioNext".action.spawn = ["playerctl" "next"];
+            "XF86AudioPlay".action.spawn = [
+              "playerctl"
+              "play-pause"
+            ];
+            "XF86AudioStop".action.spawn = [
+              "playerctl"
+              "stop"
+            ];
+            "XF86AudioPrev".action.spawn = [
+              "playerctl"
+              "previous"
+            ];
+            "XF86AudioNext".action.spawn = [
+              "playerctl"
+              "next"
+            ];
           };
 
           layout = {
@@ -136,17 +194,17 @@
               spread = 8;
             };
             preset-column-widths = [
-              {proportion = 1. / 3.;}
-              {proportion = 1. / 2.;}
-              {proportion = 2. / 3.;}
-              {proportion = 1. / 1.;}
+              { proportion = 1. / 3.; }
+              { proportion = 1. / 2.; }
+              { proportion = 2. / 3.; }
+              { proportion = 1. / 1.; }
             ];
 
             preset-window-heights = [
-              {proportion = 1. / 3.;}
-              {proportion = 1. / 2.;}
-              {proportion = 2. / 3.;}
-              {proportion = 1. / 1.;}
+              { proportion = 1. / 3.; }
+              { proportion = 1. / 2.; }
+              { proportion = 2. / 3.; }
+              { proportion = 1. / 1.; }
             ];
 
             default-column-width = {
@@ -164,25 +222,25 @@
               };
             }
             {
-              matches = [{app-id = "^kitty";}];
+              matches = [ { app-id = "^kitty"; } ];
               draw-border-with-background = false;
             }
             {
               matches = [
-                {app-id = "^firefox";}
+                { app-id = "^firefox"; }
               ];
               open-maximized = true;
             }
             {
               matches = [
-                {app-id = "^zen-beta";}
+                { app-id = "^zen-beta"; }
               ];
               open-maximized = true;
             }
           ];
           layer-rules = [
             {
-              matches = [{namespace = "^noctalia-backdrop";}];
+              matches = [ { namespace = "^noctalia-backdrop"; } ];
               place-within-backdrop = true;
             }
           ];

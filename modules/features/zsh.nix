@@ -1,4 +1,4 @@
-{...}: {
+{ ... }: {
   homeModules = [
     {
       programs.zsh = {
@@ -7,7 +7,7 @@
         enableCompletion = true;
         autosuggestion = {
           enable = true;
-          strategy = ["history"];
+          strategy = [ "history" ];
         };
         syntaxHighlighting.enable = true;
         history = {

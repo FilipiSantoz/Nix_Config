@@ -1,8 +1,9 @@
-{...}: {
+{ inputs, ... }: {
   homeModules = [
-    ({pkgs, ...}: {
+    ({ pkgs, ... }: {
       home.packages = with pkgs; [
         # Normal Stack
+        inputs.Neve.packages.${pkgs.stdenv.hostPlatform.system}.default
         eza
         playerctl
         lazygit
@@ -31,6 +32,7 @@
         shfmt
         lua-language-server
         nixd
+        shellcheck
         stylua
         marksman
         prettier
@@ -44,7 +46,6 @@
         gopls
         gotools
         golangci-lint
-        shellcheck
       ];
 
       xdg.userDirs = {
@@ -72,23 +73,25 @@
         ];
       };
 
-      programs.direnv = {
-        enable = true;
-        nix-direnv.enable = true;
-        enableZshIntegration = true;
-      };
-
-      # === GIT ===
-      programs.git = {
-        enable = true;
-        settings = {
-          user.name = "FilipiSantoz";
-          user.email = "239681201+FilipiSantoz@users.noreply.github.com";
-          init.defaultBranch = "main";
-          pull.rebase = false;
+      programs = {
+        direnv = {
+          enable = true;
+          nix-direnv.enable = true;
+          enableZshIntegration = true;
         };
+
+        # === GIT ===
+        git = {
+          enable = true;
+          settings = {
+            user.name = "FilipiSantoz";
+            user.email = "239681201+FilipiSantoz@users.noreply.github.com";
+            init.defaultBranch = "main";
+            pull.rebase = false;
+          };
+        };
+        home-manager.enable = true;
       };
-      programs.home-manager.enable = true;
     })
   ];
 }

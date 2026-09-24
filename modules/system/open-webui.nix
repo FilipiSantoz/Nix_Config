@@ -1,6 +1,6 @@
-{...}: {
+{ ... }: {
   nixosModules = [
-    ({pkgs, ...}: {
+    ({ pkgs, ... }: {
       services.open-webui = {
         enable = true;
         port = 3333;
@@ -9,7 +9,7 @@
           OPENAI_API_KEY = "dummy";
         };
       };
-      systemd.services.open-webui.wantedBy = pkgs.lib.mkForce [];
+      systemd.services.open-webui.wantedBy = pkgs.lib.mkForce [ ];
     })
   ];
 }
