@@ -226,6 +226,14 @@
               draw-border-with-background = false;
             }
             {
+              matches = [ { app-id = "^luna-analyzer"; } ];
+              draw-border-with-background = false;
+              open-floating = true;
+              default-window-height = {
+                proportion = 0.2;
+              };
+            }
+            {
               matches = [
                 { app-id = "^firefox"; }
               ];

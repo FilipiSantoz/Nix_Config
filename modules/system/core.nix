@@ -25,7 +25,7 @@
         firewall = {
           enable = true;
           allowedTCPPorts = [ 22 ];
-          trustedInterfaces = [ "dcoker0" ];
+          trustedInterfaces = [ "docker0" ];
         };
       };
 
@@ -64,6 +64,16 @@
       nixpkgs.config.allowUnfree = true;
 
       zramSwap.enable = true;
+
+      programs.nix-ld.enable = true;
+      programs.nix-ld.libraries = with pkgs; [
+        wayland
+        libxkbcommon
+        libGL
+        vulkan-loader
+        libpulseaudio
+        alsa-lib
+      ];
 
       services = {
         power-profiles-daemon.enable = true;

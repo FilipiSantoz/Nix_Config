@@ -26,6 +26,9 @@
         foliate
         miro
         gnome-calculator
+        pavucontrol
+        pulseaudio
+        ffmpeg
 
         statix
         alejandra
