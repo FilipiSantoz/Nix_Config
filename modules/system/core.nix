@@ -65,15 +65,18 @@
 
       zramSwap.enable = true;
 
-      programs.nix-ld.enable = true;
-      programs.nix-ld.libraries = with pkgs; [
-        wayland
-        libxkbcommon
-        libGL
-        vulkan-loader
-        libpulseaudio
-        alsa-lib
-      ];
+      programs = {
+        appimage.enable = true;
+        nix-ld.enable = true;
+        nix-ld.libraries = with pkgs; [
+          wayland
+          libxkbcommon
+          libGL
+          vulkan-loader
+          libpulseaudio
+          alsa-lib
+        ];
+      };
 
       services = {
         power-profiles-daemon.enable = true;
