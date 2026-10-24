@@ -29,6 +29,9 @@
         pavucontrol
         pulseaudio
         ffmpeg
+        nix-index
+        helvum
+        wlr-randr
 
         statix
         alejandra
@@ -49,6 +52,7 @@
         gopls
         gotools
         golangci-lint
+        vscode-langservers-extracted
       ];
 
       xdg.userDirs = {
@@ -69,11 +73,12 @@
           BROWSER = "firefox";
           GDK_BACKEND = "wayland";
           QT_QPA_PLATFORM = "wayland";
+          GTK_IM_MODULE = "simple";
           MOZ_ENABLE_WAYLAND = "1";
         };
-        sessionPath = [
-          "$HOME/.config/emacs/bin:$PATH"
-        ];
+        # sessionPath = [
+        #   "$HOME/.config/emacs/bin:$PATH"
+        # ];
       };
 
       programs = {

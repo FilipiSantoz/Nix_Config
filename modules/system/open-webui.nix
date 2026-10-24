@@ -2,7 +2,7 @@
   nixosModules = [
     ({ pkgs, ... }: {
       services.open-webui = {
-        enable = true;
+        enable = false;
         port = 3333;
         environment = {
           OPENAI_API_BASE_URLS = "http://127.0.0.1:3232/v1";

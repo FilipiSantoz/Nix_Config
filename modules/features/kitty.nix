@@ -1,4 +1,4 @@
-{...}: {
+{ ... }: {
   homeModules = [
     {
       programs.kitty = {
@@ -22,6 +22,7 @@
           confirm_os_window_close = 0;
           scrollback_lines = 10000;
           enable_audio_bell = false;
+          cursor_shape = "block";
 
           # Cursor animation
           cursor_trail = "3";
@@ -101,7 +102,10 @@
           color15 = "#A5ADCB";
         };
 
-        shellIntegration.enableZshIntegration = true;
+        shellIntegration = {
+          enableZshIntegration = true;
+          mode = "no-cursor";
+        };
       };
     }
   ];

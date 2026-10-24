@@ -14,7 +14,7 @@
             keyboard = {
               xkb = {
                 layout = "br";
-                variant = "abnt2";
+                # variant = "abnt2";
               };
               numlock = true;
             };
@@ -32,7 +32,8 @@
           };
 
           binds = {
-            "Mod+Return".action.spawn = "kitty";
+            "Mod+Return".action.spawn = "ghostty";
+            "Mod+G".action.spawn = "kitty";
             "Mod+B".action.spawn = "zen-beta";
             "Mod+X".action.spawn = "audacious";
             "Mod+W".action.close-window = { };
@@ -112,7 +113,6 @@
               "noctalia"
               "msg"
               "screenshot-region"
-              "wlr-screencopy"
             ];
             "Mod+Space".action.spawn = [
               "noctalia"
@@ -183,8 +183,8 @@
 
             focus-ring = {
               enable = true;
-              width = 2;
-              active.color = "#F4F2F7";
+              width = 1.4;
+              active.color = "#ECA1FF";
             };
 
             shadow = {
@@ -223,6 +223,10 @@
             }
             {
               matches = [ { app-id = "^kitty"; } ];
+              draw-border-with-background = false;
+            }
+            {
+              matches = [ { app-id = "^com.mitchellh.ghostty"; } ];
               draw-border-with-background = false;
             }
             {

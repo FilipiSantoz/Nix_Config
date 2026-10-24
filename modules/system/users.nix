@@ -12,6 +12,7 @@
           "input"
           "docker"
           "render"
+          "i2c"
         ];
       };
       programs.zsh.enable = true;
