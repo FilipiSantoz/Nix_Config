@@ -183,16 +183,16 @@
 
             focus-ring = {
               enable = true;
-              width = 1.4;
+              width = 1.2;
               active.color = "#ECA1FF";
             };
 
-            shadow = {
-              enable = true;
-              color = "#00000070";
-              softness = 22;
-              spread = 8;
-            };
+            # shadow = {
+            #   enable = true;
+            #   color = "#00000070";
+            #   softness = 22;
+            #   spread = 8;
+            # };
             preset-column-widths = [
               { proportion = 1. / 3.; }
               { proportion = 1. / 2.; }
@@ -215,10 +215,10 @@
             {
               clip-to-geometry = true;
               geometry-corner-radius = {
-                top-left = 12.0;
-                top-right = 12.0;
-                bottom-left = 12.0;
-                bottom-right = 12.0;
+                top-left = 10.0;
+                top-right = 10.0;
+                bottom-left = 10.0;
+                bottom-right = 10.0;
               };
             }
             {
@@ -230,7 +230,7 @@
               draw-border-with-background = false;
             }
             {
-              matches = [ { app-id = "^luna-analyzer"; } ];
+              matches = [ { app-id = "^lire-audio"; } ];
               draw-border-with-background = false;
               open-floating = true;
               default-window-height = {
